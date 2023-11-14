@@ -12,6 +12,15 @@ class Promotion {
     const reservationDate = await this.getReservationDate();
     const reservationMenu = await this.getReservationMenu();
     OutputView.printMenu(reservationMenu.getMenuList());
+
+    const decemberPromotion = new DecemberPromotion(
+      reservationDate.getDate(),
+      reservationMenu.getMenuList(),
+    );
+
+    OutputView.printTotalAmount(
+      decemberPromotion.calculateTotalAmountBeforeDiscount(),
+    );
   }
 
   async getReservationDate() {
