@@ -1,3 +1,5 @@
+import { SPECIAL_DATE } from './Constant.js';
+
 class DecemberPromotion {
   #reservationDate;
   #reservationMenu;
@@ -18,6 +20,14 @@ class DecemberPromotion {
     );
 
     return totalAmount;
+  }
+
+  specialDiscount() {
+    if (SPECIAL_DATE.includes(this.#reservationDate)) {
+      return 1000;
+    }
+
+    return 0;
   }
 }
 
