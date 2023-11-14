@@ -10,6 +10,10 @@ const OutputView = {
       Console.print(`${menuItem.getMenu()} ${menuItem.getNumber()}개`);
     });
   },
+
+  printError(message) {
+    Console.print(message);
+  },
 };
 
 export default OutputView;
