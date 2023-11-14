@@ -44,6 +44,23 @@ class ReservationMenuItem {
   getNumber() {
     return this.#number;
   }
+
+  calculate() {
+    const menuCategories = [
+      APPETIZER_MENUS,
+      MAIN_MENUS,
+      DESSERT_MENUS,
+      BEVERAGE_MENUS,
+    ];
+
+    const priceList = menuCategories.map((menuCategory) => {
+      return Object.keys(menuCategory).includes(this.#menu)
+        ? menuCategory[this.#menu] * this.#number
+        : 0;
+    });
+
+    return priceList.reduce((acc, currentValue) => acc + currentValue);
+  }
 }
 
 export default ReservationMenuItem;
