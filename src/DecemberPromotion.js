@@ -1,4 +1,4 @@
-import { SPECIAL_DATE } from './Constant.js';
+import { SPECIAL_DATE, CHRISTMAS_EVENT_END } from './Constant.js';
 
 class DecemberPromotion {
   #reservationDate;
@@ -25,6 +25,22 @@ class DecemberPromotion {
   specialDiscount() {
     if (SPECIAL_DATE.includes(this.#reservationDate)) {
       return 1000;
+    }
+
+    return 0;
+  }
+
+  christmasDiscount() {
+    if (this.#reservationDate <= CHRISTMAS_EVENT_END) {
+      let count = 1;
+      let discount = 1000;
+
+      while (count < this.#reservationDate) {
+        discount += 100;
+        count += 1;
+      }
+
+      return discount;
     }
 
     return 0;
