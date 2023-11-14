@@ -18,10 +18,10 @@ class ReservationMenuItem {
 
   validateMenu(menu) {
     if (
-      !APPETIZER_MENUS.includes(menu) &&
-      !MAIN_MENUS.includes(menu) &&
-      !DESSERT_MENUS.includes(menu) &&
-      !BEVERAGE_MENUS.includes(menu)
+      !Object.keys(APPETIZER_MENUS).includes(menu) &&
+      !Object.keys(MAIN_MENUS).includes(menu) &&
+      !Object.keys(DESSERT_MENUS).includes(menu) &&
+      !Object.keys(BEVERAGE_MENUS).includes(menu)
     ) {
       throw new Error('[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.');
     }
