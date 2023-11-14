@@ -53,6 +53,10 @@ class ReservationMenu {
       );
     }
   }
+
+  getMenuList() {
+    return this.#menuList;
+  }
 }
 
 export default ReservationMenu;
