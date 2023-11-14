@@ -14,6 +14,11 @@ const OutputView = {
   printError(message) {
     Console.print(message);
   },
+
+  printTotalAmount(totalAmount) {
+    Console.print('\n<할인 전 총주문 금액>');
+    Console.print(`${totalAmount.toLocaleString('en-US')}원`);
+  },
 };
 
 export default OutputView;
