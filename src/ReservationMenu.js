@@ -42,9 +42,10 @@ class ReservationMenu {
 
   validateMaxNumber(menuList) {
     const InitialCount = 0;
-    const count = menuList.reduce((acc, currentValue) => {
-      return acc + currentValue.getNumber();
-    }, InitialCount);
+    const count = menuList.reduce(
+      (acc, currentValue) => acc + currentValue.getNumber(),
+      InitialCount,
+    );
 
     if (count > MAX_NUMBER) {
       throw new Error(
