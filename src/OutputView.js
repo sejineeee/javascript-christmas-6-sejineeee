@@ -7,7 +7,7 @@ const OutputView = {
     );
 
     menuList.forEach((menuItem) => {
-      Console.print(`${menuItem.getMenu()} ${menuItem.getNumber()}개\n`);
+      Console.print(`${menuItem.getMenu()} ${menuItem.getNumber()}개`);
     });
   },
 };
