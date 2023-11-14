@@ -1,7 +1,5 @@
 import ReservationMenuItem from './ReservationMenuItem.js';
 
-const MAX_NUMBER = 20;
-
 class ReservationMenu {
   #menuList;
 
@@ -41,10 +39,12 @@ class ReservationMenu {
   }
 
   validateMaxNumber(menuList) {
-    const InitialCount = 0;
+    const INITIAL_COUNT = 0;
+    const MAX_NUMBER = 20;
+
     const count = menuList.reduce(
       (acc, currentValue) => acc + currentValue.getNumber(),
-      InitialCount,
+      INITIAL_COUNT,
     );
 
     if (count > MAX_NUMBER) {
