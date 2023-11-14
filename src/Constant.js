@@ -21,3 +21,20 @@ export const BEVERAGE_MENUS = {
   레드와인: 60000,
   샴페인: 25000,
 };
+
+export const DAY = [
+  '토요일',
+  '일요일',
+  '월요일',
+  '화요일',
+  '수요일',
+  '목요일',
+  '금요일',
+];
+
+export const EVENT_START = 1;
+export const EVENT_END = 31;
+
+export const CHRISTMAS_EVENT_END = 25;
+
+export const SPECIAL_DATE = [3, 10, 17, 24, 31];
