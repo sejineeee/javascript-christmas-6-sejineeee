@@ -1,3 +1,4 @@
+import { DESSERT_MENUS, MAIN_MENUS } from '../src/Constant';
 import ReservationMenuItem from '../src/ReservationMenuItem';
 
 describe('예외 테스트', () => {
@@ -18,4 +19,25 @@ describe('예외 테스트', () => {
       new ReservationMenuItem(menu, number);
     }).toThrowError(ERROR_MESSAGE);
   });
+});
+
+describe('기능 테스트', () => {
+  test('메뉴가 얼마인지 값을 반환한다.', () => {
+    const reservationMenuItem = new ReservationMenuItem('양송이수프', 3);
+    const PRICE = 18000;
+
+    expect(reservationMenuItem.calculate()).toBe(PRICE);
+  });
+
+  test.each([
+    { menu: '초코케이크', number: 1, category: DESSERT_MENUS, result: 2023 },
+    { menu: '티본스테이크', number: 3, category: MAIN_MENUS, result: 6069 },
+  ])(
+    '해당하는 메뉴를 메뉴 1개당 할인되는 금액을 반환한다.',
+    ({ menu, number, category, result }) => {
+      const reservationMenuItem = new ReservationMenuItem(menu, number);
+
+      expect(reservationMenuItem.calculateDiscountMenu(category)).toBe(result);
+    },
+  );
 });
