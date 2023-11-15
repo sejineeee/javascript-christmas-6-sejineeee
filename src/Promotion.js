@@ -1,4 +1,3 @@
-import { Console } from '@woowacourse/mission-utils';
 import InputView from './InputView.js';
 import ReservationDate from './ReservationDate.js';
 import ReservationMenu from './ReservationMenu.js';
