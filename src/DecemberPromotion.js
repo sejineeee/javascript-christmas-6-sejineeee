@@ -135,6 +135,24 @@ class DecemberPromotion {
       gift,
     });
   }
+
+  calculateDiscountAmount() {
+    const gift = this.isValidGift ? 25000 : 0;
+
+    const discountAmount =
+      this.christmasDiscount() +
+      this.weekendDiscount() +
+      this.weekdayDiscount() +
+      this.specialDiscount() +
+      gift;
+
+    return discountAmount;
+  }
+
+  printDiscountAmount() {
+    const discountAmount = this.calculateDiscountAmount();
+    OutputView.printDiscountAmount(discountAmount);
+  }
 }
 
 export default DecemberPromotion;
