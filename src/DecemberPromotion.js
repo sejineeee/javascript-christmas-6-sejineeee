@@ -153,6 +153,20 @@ class DecemberPromotion {
     const discountAmount = this.calculateDiscountAmount();
     OutputView.printDiscountAmount(discountAmount);
   }
+
+  getEventBadge() {
+    const discountAmount = this.calculateDiscountAmount();
+
+    if (discountAmount >= 5000 && discountAmount < 10000) {
+      return '별';
+    } else if (discountAmount >= 10000 && discountAmount < 20000) {
+      return '트리';
+    } else if (discountAmount >= 20000) {
+      return '산타';
+    } else {
+      return '없음';
+    }
+  }
 }
 
 export default DecemberPromotion;
