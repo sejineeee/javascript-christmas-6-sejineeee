@@ -52,6 +52,21 @@ class DecemberPromotion {
 
     return day;
   }
+
+  weekendDiscount() {
+    const WEEKEND = ['금요일', '토요일'];
+    const day = this.parsedDay(this.#reservationDate);
+
+    if (WEEKEND.includes(day)) {
+      const discountList = this.#reservationMenu.map((menuItem) =>
+        menuItem.calculateDiscountMenu(MAIN_MENUS),
+      );
+
+      return discountList.reduce((acc, currentValue) => acc + currentValue);
+    }
+
+    return 0;
+  }
 }
 
 export default DecemberPromotion;
