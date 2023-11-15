@@ -1,4 +1,10 @@
-import { SPECIAL_DATE, CHRISTMAS_EVENT_END, DAY } from './Constant.js';
+import {
+  SPECIAL_DATE,
+  CHRISTMAS_EVENT_END,
+  DAY,
+  MAIN_MENUS,
+  DESSERT_MENUS,
+} from './Constant.js';
 
 class DecemberPromotion {
   #reservationDate;
@@ -60,6 +66,21 @@ class DecemberPromotion {
     if (WEEKEND.includes(day)) {
       const discountList = this.#reservationMenu.map((menuItem) =>
         menuItem.calculateDiscountMenu(MAIN_MENUS),
+      );
+
+      return discountList.reduce((acc, currentValue) => acc + currentValue);
+    }
+
+    return 0;
+  }
+
+  weekdayDiscount() {
+    const WEEKDAY = ['일요일', '월요일', '화요일', '수요일', '목요일'];
+    const day = this.parsedDay(this.#reservationDate);
+
+    if (WEEKDAY.includes(day)) {
+      const discountList = this.#reservationMenu.map((menuItem) =>
+        menuItem.calculateDiscountMenu(DESSERT_MENUS),
       );
 
       return discountList.reduce((acc, currentValue) => acc + currentValue);
