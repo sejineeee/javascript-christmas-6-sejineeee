@@ -64,6 +64,10 @@ const OutputView = {
     Console.print('\n<할인 후 예상 결제 금액>');
     Console.print(`${afterDiscountTotalAmount.toLocaleString('en-US')}원`);
   },
+
+  printEventBadge(eventBadge) {
+    Console.print(`\n<12월 이벤트 배지>\n${eventBadge}`);
+  },
 };
 
 export default OutputView;
