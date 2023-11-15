@@ -15,8 +15,6 @@ class DecemberPromotion {
   constructor(date, menu) {
     this.#reservationDate = date;
     this.#reservationMenu = menu;
-
-    console.log(this.calculateAfterDiscount());
   }
 
   calculateTotalAmountBeforeDiscount() {
