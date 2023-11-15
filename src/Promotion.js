@@ -6,6 +6,8 @@ import OutputView from './OutputView.js';
 import DecemberPromotion from './DecemberPromotion.js';
 
 class Promotion {
+  #eventBadge;
+
   constructor() {}
 
   async execute() {
@@ -24,6 +26,11 @@ class Promotion {
 
     OutputView.printGiftList(decemberPromotion.isValidGift());
     decemberPromotion.printPromotionList();
+    decemberPromotion.printDiscountAmount();
+    OutputView.printAfterDiscount(decemberPromotion.calculateAfterDiscount());
+
+    this.#eventBadge = decemberPromotion.getEventBadge();
+    OutputView.printEventBadge(this.#eventBadge);
   }
 
   async getReservationDate() {
