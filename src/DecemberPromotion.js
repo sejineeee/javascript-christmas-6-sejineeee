@@ -1,4 +1,4 @@
-import { SPECIAL_DATE, CHRISTMAS_EVENT_END } from './Constant.js';
+import { SPECIAL_DATE, CHRISTMAS_EVENT_END, DAY } from './Constant.js';
 
 class DecemberPromotion {
   #reservationDate;
@@ -44,6 +44,13 @@ class DecemberPromotion {
     }
 
     return 0;
+  }
+
+  parsedDay(date) {
+    const dayIndex = new Date(2023, 11, date + 1).getDay();
+    const day = DAY[dayIndex];
+
+    return day;
   }
 }
 
