@@ -63,7 +63,7 @@ class ReservationMenuItem {
   }
 
   calculateDiscountMenu(category) {
-    return Object.keys(category).includes(this.#menu) ? 2023 : 0;
+    return Object.keys(category).includes(this.#menu) ? 2023 * this.#number : 0;
   }
 }
 
