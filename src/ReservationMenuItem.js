@@ -61,6 +61,10 @@ class ReservationMenuItem {
 
     return priceList.reduce((acc, currentValue) => acc + currentValue);
   }
+
+  calculateDiscountMenu(category) {
+    return Object.keys(category).includes(this.#menu) ? 2023 : 0;
+  }
 }
 
 export default ReservationMenuItem;
