@@ -137,7 +137,7 @@ class DecemberPromotion {
   }
 
   calculateDiscountAmount() {
-    const gift = this.isValidGift ? 25000 : 0;
+    const gift = this.isValidGift() ? 25000 : 0;
 
     const discountAmount =
       this.christmasDiscount() +
