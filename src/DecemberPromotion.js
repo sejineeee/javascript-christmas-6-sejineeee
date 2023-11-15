@@ -88,6 +88,23 @@ class DecemberPromotion {
 
     return 0;
   }
+
+  calculateDiscount() {
+    const beforeDiscountAmount = this.calculateTotalAmountBeforeDiscount();
+    const christmasDiscountAmount = this.christmasDiscount();
+    const weekendDiscountAmount = this.weekendDiscount();
+    const weekdayDiscountAmount = this.weekdayDiscount();
+    const specialDiscountAmount = this.specialDiscount();
+
+    const discountTotalAmount =
+      beforeDiscountAmount +
+      christmasDiscountAmount +
+      weekendDiscountAmount +
+      weekdayDiscountAmount +
+      specialDiscountAmount;
+
+    return discountTotalAmount;
+  }
 }
 
 export default DecemberPromotion;
