@@ -1,3 +1,4 @@
+import { BEVERAGE_MENUS } from './Constant.js';
 import ReservationMenuItem from './ReservationMenuItem.js';
 
 class ReservationMenu {
@@ -8,6 +9,7 @@ class ReservationMenu {
     this.#menuList = this.splitMenuData(menuList);
     this.validateDuplicateMenu(this.#menuList);
     this.validateMaxNumber(this.#menuList);
+    this.validateNoBeverageOnlyMenu(this.#menuList);
   }
 
   validate(menuList) {
@@ -51,6 +53,18 @@ class ReservationMenu {
       throw new Error(
         '[ERROR] 메뉴는 최대 20개까지만 주문할 수 있습니다. 다시 입력해 주세요.',
       );
+    }
+  }
+
+  validateNoBeverageOnlyMenu(menuList) {
+    const menuNameList = menuList.map((menuItem) => menuItem.getMenu());
+
+    const isAllBeverage = menuNameList.every((menuName) =>
+      Object.keys(BEVERAGE_MENUS).includes(menuName),
+    );
+
+    if (isAllBeverage) {
+      throw new Error('[ERROR] 음료만 주문할 수 없습니다. 다시 입력해 주세요.');
     }
   }
 
