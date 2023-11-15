@@ -89,21 +89,21 @@ class DecemberPromotion {
     return 0;
   }
 
-  calculateDiscount() {
+  calculateAfterDiscount() {
     const beforeDiscountAmount = this.calculateTotalAmountBeforeDiscount();
     const christmasDiscountAmount = this.christmasDiscount();
     const weekendDiscountAmount = this.weekendDiscount();
     const weekdayDiscountAmount = this.weekdayDiscount();
     const specialDiscountAmount = this.specialDiscount();
 
-    const discountTotalAmount =
-      beforeDiscountAmount +
-      christmasDiscountAmount +
-      weekendDiscountAmount +
-      weekdayDiscountAmount +
-      specialDiscountAmount;
+    const afterDiscountTotalAmount =
+      beforeDiscountAmount -
+      (christmasDiscountAmount +
+        weekendDiscountAmount +
+        weekdayDiscountAmount +
+        specialDiscountAmount);
 
-    return discountTotalAmount;
+    return afterDiscountTotalAmount;
   }
 }
 
