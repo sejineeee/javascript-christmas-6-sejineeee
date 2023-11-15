@@ -54,6 +54,11 @@ const OutputView = {
       Console.print(`증정 이벤트: -25,000원`);
     }
   },
+
+  printDiscountAmount(discountAmount) {
+    Console.print('\n<총혜택 금액>');
+    Console.print(`-${discountAmount.toLocaleString('en-US')}원`);
+  },
 };
 
 export default OutputView;
