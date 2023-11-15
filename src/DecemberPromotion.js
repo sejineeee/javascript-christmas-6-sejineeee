@@ -13,6 +13,8 @@ class DecemberPromotion {
   constructor(date, menu) {
     this.#reservationDate = date;
     this.#reservationMenu = menu;
+
+    console.log(this.calculateAfterDiscount());
   }
 
   calculateTotalAmountBeforeDiscount() {
@@ -104,6 +106,16 @@ class DecemberPromotion {
         specialDiscountAmount);
 
     return afterDiscountTotalAmount;
+  }
+
+  isValidGift() {
+    const totalAmountBeforeDiscount = this.calculateTotalAmountBeforeDiscount();
+
+    if (totalAmountBeforeDiscount >= 120000) {
+      return true;
+    }
+
+    return false;
   }
 }
 
