@@ -6,6 +6,8 @@ import {
   DESSERT_MENUS,
 } from './Constant.js';
 
+import OutputView from './OutputView.js';
+
 class DecemberPromotion {
   #reservationDate;
   #reservationMenu;
@@ -116,6 +118,22 @@ class DecemberPromotion {
     }
 
     return false;
+  }
+
+  printPromotionList() {
+    const christmas = this.christmasDiscount();
+    const weekend = this.weekendDiscount();
+    const weekday = this.weekdayDiscount();
+    const special = this.specialDiscount();
+    const gift = this.isValidGift();
+
+    OutputView.printPromotionList({
+      christmas,
+      weekend,
+      weekday,
+      special,
+      gift,
+    });
   }
 }
 
