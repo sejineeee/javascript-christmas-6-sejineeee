@@ -98,6 +98,10 @@ class DecemberPromotion {
     const weekdayDiscountAmount = this.weekdayDiscount();
     const specialDiscountAmount = this.specialDiscount();
 
+    if (beforeDiscountAmount < 10000) {
+      return beforeDiscountAmount;
+    }
+
     const afterDiscountTotalAmount =
       beforeDiscountAmount -
       (christmasDiscountAmount +
@@ -124,6 +128,7 @@ class DecemberPromotion {
     const weekday = this.weekdayDiscount();
     const special = this.specialDiscount();
     const gift = this.isValidGift();
+    const totalAmount = this.calculateTotalAmountBeforeDiscount();
 
     OutputView.printPromotionList({
       christmas,
@@ -131,11 +136,16 @@ class DecemberPromotion {
       weekday,
       special,
       gift,
+      totalAmount,
     });
   }
 
   calculateDiscountAmount() {
     const gift = this.isValidGift() ? 25000 : 0;
+
+    if (this.calculateTotalAmountBeforeDiscount() < 10000) {
+      return 0;
+    }
 
     const discountAmount =
       this.christmasDiscount() +
