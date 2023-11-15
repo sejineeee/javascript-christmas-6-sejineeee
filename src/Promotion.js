@@ -21,6 +21,9 @@ class Promotion {
     OutputView.printTotalAmount(
       decemberPromotion.calculateTotalAmountBeforeDiscount(),
     );
+
+    OutputView.printGiftList(decemberPromotion.isValidGift());
+    decemberPromotion.printPromotionList();
   }
 
   async getReservationDate() {
