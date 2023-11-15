@@ -59,6 +59,11 @@ const OutputView = {
     Console.print('\n<총혜택 금액>');
     Console.print(`-${discountAmount.toLocaleString('en-US')}원`);
   },
+
+  printAfterDiscount(afterDiscountTotalAmount) {
+    Console.print('\n<할인 후 예상 결제 금액>');
+    Console.print(`${afterDiscountTotalAmount.toLocaleString('en-US')}원`);
+  },
 };
 
 export default OutputView;
