@@ -24,6 +24,36 @@ const OutputView = {
     Console.print('\n<증정 메뉴>');
     Console.print(`${isValid ? '샴페인 1개' : '없음'}`);
   },
+
+  printPromotionList({ christmas, weekday, weekend, special, gift }) {
+    Console.print('\n<혜택 내역>');
+
+    if (!christmas && !weekday && !weekend && !special && !gift) {
+      Console.print('없음');
+    }
+
+    if (christmas !== 0) {
+      Console.print(
+        `크리스마스 디데이 할인: -${christmas.toLocaleString('en-US')}원`,
+      );
+    }
+
+    if (weekday !== 0) {
+      Console.print(`평일 할인: -${weekday.toLocaleString('en-US')}원`);
+    }
+
+    if (weekend !== 0) {
+      Console.print(`주말 할인: -${weekend.toLocaleString('en-US')}원`);
+    }
+
+    if (special !== 0) {
+      Console.print(`특별 할인: -${special.toLocaleString('en-US')}원`);
+    }
+
+    if (gift) {
+      Console.print(`증정 이벤트: -25,000원`);
+    }
+  },
 };
 
 export default OutputView;
